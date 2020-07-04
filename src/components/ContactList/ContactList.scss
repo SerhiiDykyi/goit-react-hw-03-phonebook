@@ -1,0 +1,19 @@
+@import 'styles/shared.scss';
+
+.contact_list {
+  list-style-type: disc;
+}
+.contact_item {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.button-del {
+  background-color: $btn-del;
+  @extend %button;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
