@@ -6,11 +6,33 @@ import Form from './components/Form';
 import Filter from './components/Filter';
 import ContactList from './components/ContactList';
 
+import { saveToLS, getFromLS } from './components/Utils/Helpers';
+
 class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    this.setState({ contacts: getFromLS('contacts') });
+    // const contacts = localStorage.getItem('contacts');
+    // const parsedContacts = JSON.parse(contacts);
+
+    // if (parsedContacts) {
+    //   this.setState({ contacts: parsedContacts });
+    // }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // if (this.state.contacts !== prevState.contacts) {
+    //   localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    // }
+    const { contacts } = this.state;
+    if (contacts !== prevState.contacts) {
+      saveToLS('contacts', contacts);
+    }
+  }
 
   addContact = ({ name, number }) => {
     if (name === '') {
