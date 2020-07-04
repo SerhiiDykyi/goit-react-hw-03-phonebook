@@ -1,0 +1,19 @@
+@import 'styles/shared.scss';
+
+.form_container {
+  border: 1px solid black;
+  width: 350px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.button {
+  @extend %button;
+  background-color: $btn-add;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.form_label {
+  margin-bottom: 25px;
+}
