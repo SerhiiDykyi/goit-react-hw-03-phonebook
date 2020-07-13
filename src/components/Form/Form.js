@@ -36,6 +36,7 @@ class Form extends Component {
           <p>Name</p>
           <label htmlFor={this.nameInputId}>
             <input
+              id={this.nameInputId}
               type="text"
               name="name"
               value={name}
@@ -45,6 +46,7 @@ class Form extends Component {
           <p>Number</p>
           <label htmlFor={this.namberInputId}>
             <input
+              id={this.namberInputId}
               className="form_label"
               type="tel"
               name="number"

@@ -6,7 +6,7 @@ import Form from './components/Form';
 import Filter from './components/Filter';
 import ContactList from './components/ContactList';
 
-import { saveToLS, getFromLS } from './components/Utils/Helpers';
+import { saveToLS, getFromLS } from './Utils/Helpers';
 
 class App extends Component {
   state = {
@@ -15,7 +15,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.setState({ contacts: getFromLS('contacts') });
+    const getContactsFromLS = getFromLS('contacts');
+    if (getContactsFromLS) {
+      this.setState({ contacts: getContactsFromLS });
+    }
+    // this.setState({ contacts: getFromLS('contacts') });
     // const contacts = localStorage.getItem('contacts');
     // const parsedContacts = JSON.parse(contacts);
 
